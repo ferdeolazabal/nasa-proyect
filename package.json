@@ -4,17 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-server": "npm install --prefix server",
-    "install-client": "npm install --prefix client",
-    "install": "npm run install-server && npm run install-client",
-    "server": "npm start --prefix server",
-    "client": "npm start --prefix client",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install": "npm i && npm run install-server && npm run install-client",
+    "server": "cd server && npm run watch",
+    "client": "cd client && npm start",
     "watch": "npm run server & npm run client",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "test": "npm run test --prefix server && npm run test --prefix client",
     "serverAlt": "cd server && npm run watch",
     "clientAlt": "cd client && npm start"
   },
   "keywords": [],
   "author": "ferdeolazabal",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
