@@ -1,3 +1,4 @@
+import React from "react";
 import { withStyles } from "arwes";
 
 const styles = () => ({
@@ -8,17 +9,12 @@ const styles = () => ({
   "@media (max-width: 800px)": {
     root: {
       margin: "0 12px",
-    }
-  }
+    },
+  },
 });
 
-const Centered = props => {
-  const {
-    classes,
-    className,
-    children,
-    ...rest
-  } = props;
+const Centered = (props) => {
+  const { classes, className, children, ...rest } = props;
   return (
     <div className={`${classes.root} ${className}`} {...rest}>
       {children}
