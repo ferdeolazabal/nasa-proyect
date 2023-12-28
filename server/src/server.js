@@ -1,4 +1,3 @@
-// @ts-nocheck
 const http = require("http");
 const app = require("./app");
 const { loadPlanetsData } = require("./models/planets.model");
