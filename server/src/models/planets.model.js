@@ -35,5 +35,5 @@ const loadPlanetsData = () => {
 
 module.exports = {
   loadPlanetsData,
-  planets: habitablePlanets,
+  getAllPlanets: () => habitablePlanets,
 };
