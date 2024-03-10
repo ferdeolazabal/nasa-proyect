@@ -8,12 +8,16 @@ const launch = {
   rocket: "Explorer IS1",
   launchDate: new Date("January 27, 2027"),
   target: "Kepler-422 b",
-  customer: ["NASA", "CAVS"],
+  customers: ["NASA", "CAVS"],
   upcoming: true,
   success: true,
 };
 
 launches.set(launch.flightNumber, launch);
+
+const existLaunchWithId = (launchId) => {
+  return launches.has(launchId);
+};
 
 const getAllLaunches = () => {
   return Array.from(launches.values());
@@ -22,17 +26,26 @@ const getAllLaunches = () => {
 const addNewLaunch = (launch) => {
   latestFlightNumber++;
   launches.set(
-    launch.flightNumber,
+    latestFlightNumber,
     Object.assign(launch, {
       success: true,
       upcoming: true,
-      customer: ["NASA", "CAVS"],
+      customers: ["NASA", "CAVS"],
       flightNumber: latestFlightNumber,
     })
   );
 };
 
+const abortLaunchById = (launchId) => {
+  const aborted = launches.get(launchId);
+  aborted.upcoming = false;
+  aborted.success = false;
+  return aborted;
+};
+
 module.exports = {
+  existLaunchWithId,
   getAllLaunches,
   addNewLaunch,
+  abortLaunchById,
 };
