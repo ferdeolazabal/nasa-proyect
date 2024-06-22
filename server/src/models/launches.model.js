@@ -27,9 +27,11 @@ const saveLaunch = async (launch) => {
     throw new Error("No matching planet found !");
   }
 
-  await launchesDb.updateOne({ flightNumber: launch.flightNumber }, launch, {
-    upsert: true,
-  });
+  await launchesDb.findOneAndUpdate(
+    { flightNumber: launch.flightNumber },
+    launch,
+    { upsert: true }
+  );
 };
 
 saveLaunch(launch);
