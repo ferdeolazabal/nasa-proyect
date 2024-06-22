@@ -28,25 +28,31 @@ const httpAddNewLaunch = async (req, res) => {
 
   try {
     await scheduleNewLaunch(launch);
-  } catch (error) {
-    return res.status(400).json({
-      error: error.message,
-    });
+    return res.status(201).json(launch);
+  } catch (e) {
+    return res.status(400).json({ error: e.message });
   }
-
-  return res.status(201).json(launch);
 };
 
-const httpAbortLaunch = (req, res) => {
+const httpAbortLaunch = async (req, res) => {
   const launchId = +req.params.id;
 
-  if (!existLaunchWithId(launchId)) {
-    return res.status(404).json({
-      error: "Launch not found",
-    });
-  } else {
-    const aborted = abortLaunchById(launchId);
-    return res.status(200).json(aborted);
+  const existLaunch = await existLaunchWithId(launchId);
+
+  if (!existLaunch) {
+    return res.status(404).json({ error: "Launch not found" });
+  }
+
+  try {
+    const aborted = await abortLaunchById(launchId);
+
+    if (!aborted) {
+      res.status(400).json({ error: "Launch not aborted" });
+    } else {
+      res.status(200).json({ ok: true, msg: "Launch aborted" });
+    }
+  } catch (e) {
+    return res.status(400).json({ error: e.message });
   }
 };
 
