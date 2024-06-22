@@ -49,13 +49,19 @@ const Launch = (props) => {
           defaultValue={today}
         />
         <label htmlFor="mission-name">Mission Name</label>
-        <input type="text" id="mission-name" name="mission-name" />
+        <input
+          type="text"
+          id="mission-name"
+          name="mission-name"
+          autoComplete="off"
+        />
         <label htmlFor="rocket-name">Rocket Type</label>
         <input
           type="text"
           id="rocket-name"
           name="rocket-name"
           defaultValue="Explorer IS1"
+          autoComplete="off"
         />
         <label htmlFor="planets-selector">Destination Exoplanet</label>
         <select id="planets-selector" name="planets-selector">
