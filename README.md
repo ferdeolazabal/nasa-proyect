@@ -1,3 +1,42 @@
+# NASA Application
+
+This project uses React.js for the front-end and Node.js for the back-end. The application allows users to simulate creating trips to habitable exoplanets discovered by NASA, using data from the [Nasa Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/docs/data.html).
+
+## Used Technologies
+
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- Arwes (Futuristic science fiction UI)
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run i`
+
+Installs project dependencies for both front-end and back-end.
+
+### `npm start`
+
+Runs the app in development mode at http://localhost:3000.
+
+### `npm run deploy`
+
+Builds the app for production to the build folder and serves it at http://localhost:8000.
+
+### `npm test`
+
+Launches server-side tests.
+
+## Features
+
+- Scheduled trip creation to habitable planets.
+- Selection of launch date and destination.
+- Mission cancellation capability.
+- View mission history.
+
 # Aplicación Nasa
 
 Este proyecto utiliza React.js para el front-end y Node.js para el back-end. La aplicación permite a los usuarios simular la creación de viajes a exoplanetas habitables descubiertos por la NASA, utilizando datos del [Nasa Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/docs/data.html).
