@@ -4,7 +4,8 @@
   "description": "NASA Mission Control API",
   "main": "src/server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand --detectOpenHandles --forceExit --verbose",
+    "test-watch": "jest --watch",
     "watch": "set PORT=8000 && nodemon src/server.js",
     "start": "set PORT=8000 && node src/server.js"
   },
