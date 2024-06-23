@@ -86,4 +86,5 @@ module.exports = {
   getAllLaunches,
   scheduleNewLaunch,
   abortLaunchById,
+  getLatestFlightNumber,
 };
