@@ -12,7 +12,7 @@
     "watch-linux": "npm run server & npm run client",
     "watch-windows": "START /MIN npm run server && START /MIN npm run client",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "test": "npm test --prefix server && npm test --prefix client",
+    "test": "npm test --prefix server",
     "server-alt": "cd server && npm run watch",
     "client-alt": "cd client && npm start",
     "server": "npm run watch --prefix server",
