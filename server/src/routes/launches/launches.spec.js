@@ -16,7 +16,7 @@ describe("Test Launches API", () => {
   describe("Test GET /launches", () => {
     test("It should respond with 200 success", async () => {
       const response = await request(app)
-        .get("/launches")
+        .get("/v1/launches")
         .expect("Content-Type", /json/)
         .expect(200);
     });
@@ -44,7 +44,7 @@ describe("Test Launches API", () => {
     };
     test("It should respond with 201 created", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(completeLaunchData)
         .expect("Content-Type", /json/)
         .expect(201);
@@ -59,7 +59,7 @@ describe("Test Launches API", () => {
 
     test("It should catch missing required properties", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(launchDataWithoutDate)
         .expect("Content-Type", /json/)
         .expect(400);
@@ -71,7 +71,7 @@ describe("Test Launches API", () => {
 
     test("It should catch invalid dates", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(launchDataWithInvalidDate)
         .expect("Content-Type", /json/)
         .expect(400);
@@ -85,7 +85,7 @@ describe("Test Launches API", () => {
   describe("Test DELETE /launches/:id", () => {
     test("It should respond with 200 success", async () => {
       const response = await request(app)
-        .delete(`/launches/${await getLatestFlightNumber()}`)
+        .delete(`/v1/launches/${await getLatestFlightNumber()}`)
         .expect("Content-Type", /json/)
         .expect(200);
 
@@ -97,7 +97,7 @@ describe("Test Launches API", () => {
 
     test("It should respond with 404 Not Found", async () => {
       const response = await request(app)
-        .delete(`/launches/9000000000`)
+        .delete(`/v1/launches/9000000000`)
         .expect("Content-Type", /json/)
         .expect(404);
 
@@ -108,7 +108,7 @@ describe("Test Launches API", () => {
 
     test("It should respond with 400 bad request", async () => {
       const response = await request(app)
-        .delete(`/launches/${await getLatestFlightNumber()}`)
+        .delete(`/v1/launches/${await getLatestFlightNumber()}`)
         .expect("Content-Type", /json/)
         .expect(400);
 
