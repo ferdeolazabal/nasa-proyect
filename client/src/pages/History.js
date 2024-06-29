@@ -20,8 +20,7 @@ const History = (props) => {
             <td>{launch.customers?.join(", ")}</td>
           </tr>
         );
-      })
-      .sort((a, b) => a.flightNumber - b.flightNumber);
+      });
   }, [props.launches]);
 
   return (
