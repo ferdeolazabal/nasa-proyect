@@ -6,17 +6,6 @@ const axios = require("axios");
 const DEFAULT_FLIGHT_NUMBER = 100;
 const SPACEX_API_URL = "https://api.spacexdata.com/v4/launches/query";
 
-const launch = {
-  flightNumber: 100,
-  mission: "Kepler Exploration X",
-  rocket: "Explorer IS1",
-  launchDate: new Date("January 27, 2027"),
-  target: "Kepler-442 b",
-  customers: ["NASA", "CAVS"],
-  upcoming: true,
-  success: true,
-};
-
 const findLaunch = async (filter) => {
   return await launches.findOne(filter);
 };
@@ -86,14 +75,16 @@ const saveLaunch = async (launch) => {
   );
 };
 
-saveLaunch(launch);
-
 const existLaunchWithId = async (launchId) => {
   return await findLaunch({ flightNumber: launchId });
 };
 
-const getAllLaunches = async () => {
-  return await launches.find({}, { _id: 0, __v: 0 });
+const getAllLaunches = async (skip, limit) => {
+  return await launches
+    .find({}, { _id: 0, __v: 0 })
+    .sort("flightNumber")
+    .skip(skip)
+    .limit(limit);
 };
 
 const getLatestFlightNumber = async () => {
