@@ -43,7 +43,7 @@ const Upcoming = (props) => {
     <Appear id="upcoming" animate show={entered}>
       <Paragraph>
         Upcoming missions including both SpaceX launches and newly scheduled
-        Zero to Mastery rockets.
+        missions from other rockets.
       </Paragraph>
       <Words animate>Warning! Clicking on the ✖ aborts the mission.</Words>
       <Table animate show={entered}>
