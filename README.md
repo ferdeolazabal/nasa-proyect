@@ -15,19 +15,19 @@ This project uses React.js for the front-end and Node.js for the back-end. The a
 1. Ensure you have Node.js installed.
 2. Create a free [Mongo Atlas](https://www.mongodb.com/atlas/database) database online or start a local MongoDB database.
 3. Create a `server/.env` file with a `MONGO_URL` property set to your MongoDB connection string.
-4. In the terminal, run: `npm run i`
+4. In the terminal, run: `npm install`
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm run i`
+### `npm install`
 
 Installs project dependencies for both front-end and back-end.
 
 ### `npm start`
 
-Runs the app in development mode at http://localhost:3000.
+Runs the app in development mode at http://localhost:8000.
 
 ### `npm run deploy`
 
@@ -60,13 +60,13 @@ Este proyecto utiliza React.js para el front-end y Node.js para el back-end. La 
 
 En el directorio del proyecto, puede ejecutar:
 
-### `npm run i`
+### `npm install`
 
 Instala las dependencias del proyecto, tanto front-end como back-end
 
 ### `npm start`
 
-Ejecuta la aplicación en modo de desarrollo en http://localhost:3000.
+Ejecuta la aplicación en modo de desarrollo en http://localhost:8000.
 
 ### `npm run deploy`
 
