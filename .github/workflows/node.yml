@@ -10,7 +10,7 @@ jobs:
       CI: true
     strategy:
       matrix:
-        node-version: [18.x, 20]
+        node-version: [20]
     name: Node.js ${{ matrix.node-version }}
     runs-on: ubuntu-latest
     steps:
