@@ -2,6 +2,9 @@
 
 This project uses React.js for the front-end and Node.js for the back-end. The application allows users to simulate creating trips to habitable exoplanets discovered by NASA, using data from the [Nasa Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/docs/data.html).
 
+## Live Test
+[http://3.144.184.152:8000/launch](http://3.144.184.152:8000/launch)
+
 ## Used Technologies
 
 - React.js
